@@ -14,7 +14,7 @@ public class Pizza {
     private PizzaSize size;
 
     @ElementCollection
-    private List<PizzaToppings> extraToppings;
+    private List<PizzaToppings> toppings;
 
     @ManyToOne
     private PizzaOrder order;
@@ -22,11 +22,11 @@ public class Pizza {
     public Pizza(){
     }
 
-    public Pizza(PizzaOrder order, String name, PizzaSize size, List<PizzaToppings> extraToppings){
+    public Pizza(PizzaOrder order, String name, PizzaSize size, List<PizzaToppings> toppings){
         this.order=order;
         this.name=name;
         this.size=size;
-        this.extraToppings=extraToppings;
+        this.toppings=toppings;
     }
 
     public PizzaOrder getOrder() {
@@ -49,16 +49,9 @@ public class Pizza {
         return size;
     }
 
-    public List<PizzaToppings> getExtraToppings() {
-        return extraToppings;
+    public List<PizzaToppings> getToppings() {
+        return toppings;
     }
 
-    @Override
-    public String toString() {
-        return "Pizza{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", size=" + size +
-                '}';
-    }
+
 }

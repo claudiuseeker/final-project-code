@@ -33,7 +33,7 @@
         <tr data-th-each="pizza:${pizzas}">
             <td data-th-text="${pizza.name}"></td>
             <td data-th-text="${pizza.size}"></td>
-            <td data-th-text="${pizza.extraToppings}"></td>
+            <td data-th-text="${pizza.toppings}"></td>
             <td data-th-id = "${pizza.id}" >
                 <i class="fa fa-trash"></i>
                 <i class="fa fa-pencil-alt"></i>
@@ -66,10 +66,9 @@
 
             <!-- Modal body -->
             <div class="modal-body">
-                <input class="form-control form-control-lg m-2" id="modal-name" placeholder="Name"
-                       type="text"/>
+                <input class="form-control form-control-lg m-2" id="modal-name" placeholder="Name" type="text"/>
                 <input class="form-control form-control-lg m-2" id="modal-size" placeholder="GRANDE/MEDIUM/SMALL" type="text"/>
-                <input class="form-control form-control-lg m-2" id="modal-extraToppings" placeholder="Toppings" type="text"/>
+                <input class="form-control form-control-lg m-2" id="modal-toppings" placeholder="Toppings" type="text"/>
             </div>
 
             <!-- Modal footer -->

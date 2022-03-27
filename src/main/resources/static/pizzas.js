@@ -2,12 +2,12 @@ $(document).ready(() => {
     $('#add-button-modal').click(() => {
         const name = $('#modal-name').val();
         const size = $('#modal-size').val();
-        const extraToppings = $('#modal-extraToppings').val();
+        const toppings = $('#modal-toppings').val();
 
         const newPizza = {
             name: name,
             size: size,
-            extraToppings: extraToppings
+            toppings: toppings
         };
 
         fetch('api/pizzas', {
