@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Order {
+public class PizzaOrder {
 
     @Id
     @GeneratedValue
@@ -14,9 +14,11 @@ public class Order {
     private String name;
     private String description;
 
-    public Order(){
+    public PizzaOrder(){
+
     }
-    public Order( String name, String description) {
+
+    public PizzaOrder(String name, String description) {
         this.name=name;
         this.description=description;
     }

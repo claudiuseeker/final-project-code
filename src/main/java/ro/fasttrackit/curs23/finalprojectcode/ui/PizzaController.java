@@ -1,14 +1,12 @@
-package ro.fasttrackit.curs23.finalprojectcode.controller;
+package ro.fasttrackit.curs23.finalprojectcode.ui;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ro.fasttrackit.curs23.finalprojectcode.model.Customer;
-import ro.fasttrackit.curs23.finalprojectcode.model.Pizza;
 import ro.fasttrackit.curs23.finalprojectcode.service.PizzaService;
 
-import java.util.List;
-
-@RestController
+@Controller
 @RequestMapping("pizzas")
 public class PizzaController {
 
@@ -18,14 +16,15 @@ public class PizzaController {
         this.service=service;
     }
 
-
     @GetMapping
-    String getTransactionsPage(Model model){
-        model.addAttribute("message", "Hello Pizza");
-        model.addAttribute("user", new Customer(1, "Ana", 34));
-        model.addAttribute("transactions", service.getAll());
+    String getPizzaPage(Model model, @RequestParam(required = false) Integer showPizza ) {
+
+        model.addAttribute("pizzas", service.getAll());
+        if(showPizza!=null){
+            model.addAttribute("pizzaDetails", service.getPizzas(showPizza)
+                    .orElse(null));
+        }
         return "pizzas";
     }
-
 
 }
