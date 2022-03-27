@@ -35,7 +35,7 @@
             <td data-th-text="${pizza.size}"></td>
             <td data-th-text="${pizza.toppings}"></td>
             <td data-th-id = "${pizza.id}" >
-                <i class="fa fa-trash"></i>
+                <i class="fa fa-trash delete-icon"></i>
                 <i class="fa fa-pencil-alt"></i>
                 <a data-th-href="'/pizzas?showPizza='+${pizza.id}">
                 <i class="fa fa-arrow-alt-circle-down"></i>
@@ -45,7 +45,7 @@
     </table>
 
     <br/>
-    <button type="button" class="btn btn-primary">Add</button>
+    <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#add-edit-pizza">Add</button>
 </div>
 <div class="container" data-th-if="${pizzaDetails != null}" style="margin-top: 20px">
     <div class="card">
