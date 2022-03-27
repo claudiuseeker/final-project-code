@@ -27,7 +27,7 @@ $(document).ready(() => {
 $('.delete-icon').click(function () {
         const pizzaId = this.parentElement.id;
 
-        fetch('api/transactions/' + pizzaId, {
+        fetch('api/pizzas/' + pizzaId, {
             method: 'DELETE'
         }).then(response => location.reload());
     });
