@@ -32,5 +32,10 @@ public class PizzaService {
         toDelete.ifPresent(repository::delete);
         return toDelete;
     }
+
+    public Pizza replace(int id, Pizza pizza) {
+        pizza.setId(id);
+        return repository.save(pizza);
+    }
 }
 

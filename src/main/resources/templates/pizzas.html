@@ -36,7 +36,7 @@
             <td data-th-text="${pizza.toppings}"></td>
             <td data-th-id = "${pizza.id}" >
                 <i class="fa fa-trash delete-icon"></i>
-                <i class="fa fa-pencil-alt"></i>
+                <i class="fa fa-pencil-alt edit-icon" data-bs-target="#add-edit-pizza" data-bs-toggle="modal"></i>
                 <a data-th-href="'/pizzas?showPizza='+${pizza.id}">
                 <i class="fa fa-arrow-alt-circle-down"></i>
                 </a>
@@ -67,7 +67,12 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <input class="form-control form-control-lg m-2" id="modal-name" placeholder="Name" type="text"/>
-                <input class="form-control form-control-lg m-2" id="modal-size" placeholder="GRANDE/MEDIUM/SMALL" type="text"/>
+<!--                <input class="form-control form-control-lg m-2" id="modal-size" placeholder="GRANDE/MEDIUM/SMALL" type="text"/>-->
+                <select class="fom-control form-control-lg m-2" name="modal-size" id="modal-size" style="width: 100%;">
+                    <option value="GRANDE">Grande</option>
+                    <option value="MEDIUM">Medium</option>
+                    <option value="SMALL">Small</option>
+                </select>
                 <input class="form-control form-control-lg m-2" id="modal-toppings" placeholder="Toppings" type="text"/>
             </div>
 

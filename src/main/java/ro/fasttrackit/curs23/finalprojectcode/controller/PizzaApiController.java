@@ -20,6 +20,10 @@ public class PizzaApiController {
         return service.add(pizza);
     }
 
+    @PutMapping("{id}")
+    Pizza replacePizza(@PathVariable int id, @RequestBody Pizza pizza) {
+        return service.replace(id, pizza);
+    }
     @DeleteMapping("{id}")
     Pizza deletePizza(@PathVariable int id) {
         return service.delete(id)
