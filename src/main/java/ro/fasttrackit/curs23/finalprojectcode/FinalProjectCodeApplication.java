@@ -25,14 +25,14 @@ public class FinalProjectCodeApplication {
 		return args->{
 
 			orderRepository.save(new PizzaOrder("claudiu", "cu de toate"));
-			orderRepository.save(new PizzaOrder("Csadad", "sdffas"));
+			orderRepository.save(new PizzaOrder("bogdan", "fara branza"));
 
 			List<PizzaOrder> listOfOrders = orderRepository.findAll();
 			repository.saveAll(List.of(
-					new Pizza(listOfOrders.get(0),"Margherita", PizzaSize.GRANDE, List.of(PizzaToppings.SALAMI,PizzaToppings.PEPPER)),
-					new Pizza(listOfOrders.get(1),"Capriciosa", PizzaSize.MEDIUM, List.of(PizzaToppings.PEPPER,PizzaToppings.GORGONZOLA)),
-					new Pizza(listOfOrders.get(0),"Prosciutto e funghi", PizzaSize.SMALL, List.of(PizzaToppings.PARMEZAN, PizzaToppings.SPINACH)),
-					new Pizza(listOfOrders.get(0),"Quattro stagionni", PizzaSize.GRANDE, List.of(PizzaToppings.SPINACH, PizzaToppings.GORGONZOLA))
+					new Pizza(listOfOrders.get(0),"Margherita", PizzaSize.GRANDE, 35,List.of(PizzaToppings.SALAMI,PizzaToppings.PEPPER)),
+					new Pizza(listOfOrders.get(1),"Capriciosa", PizzaSize.MEDIUM,39, List.of(PizzaToppings.PEPPER,PizzaToppings.GORGONZOLA)),
+					new Pizza(listOfOrders.get(0),"Prosciutto e funghi", PizzaSize.SMALL,45, List.of(PizzaToppings.PARMEZAN, PizzaToppings.SPINACH)),
+					new Pizza(listOfOrders.get(0),"Quattro stagionni", PizzaSize.GRANDE,31, List.of(PizzaToppings.SPINACH, PizzaToppings.GORGONZOLA))
 			));
 		};
 	}

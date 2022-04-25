@@ -4,6 +4,7 @@ $(document).ready(() => {
          $('#add-button-modal').click(() => {
              const name = $('#modal-name').val();
              const size = $('#modal-size').val();
+             const price = $('#modal-price').val();
              const toppings = $('#modal-toppings').val();
 
              toppingsList = toppings.split(',');
@@ -11,6 +12,7 @@ $(document).ready(() => {
              const newPizza = {
                  name: name,
                  size: size,
+                 price: price,
                  toppings: toppingsList
              };
 
@@ -61,10 +63,12 @@ $(document).ready(() => {
 
              const name = row.children[0].innerText;
              const size = row.children[1].innerText;
-             const toppings = row.children[2].innerText;
+             const price = row.children[2].innerText;
+             const toppings = row.children[3].innerText;
 
              $('#modal-name').val(name);
              $('#modal-size').val(size);
+             $('#modal-price').val(price);
              $('#modal-toppings').val(toppings);
          });
          $('.delete-icon').click(function () {
@@ -83,6 +87,8 @@ $(document).ready(() => {
      function clearModal() {
               $('#modal-name').val('');
               $('#modal-size').val('');
+              $('#modal-price').val('');
               $('#modal-toppings').val('');
      }
+
 });

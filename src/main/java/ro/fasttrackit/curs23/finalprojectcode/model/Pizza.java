@@ -2,6 +2,7 @@ package ro.fasttrackit.curs23.finalprojectcode.model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 public class Pizza {
@@ -12,6 +13,7 @@ public class Pizza {
 
     private String name;
     private PizzaSize size;
+    private int price;
 
     @ElementCollection
     private List<PizzaToppings> toppings;
@@ -22,10 +24,11 @@ public class Pizza {
     public Pizza(){
     }
 
-    public Pizza(PizzaOrder order, String name, PizzaSize size, List<PizzaToppings> toppings){
+    public Pizza(PizzaOrder order, String name, PizzaSize size, int price, List<PizzaToppings> toppings){
         this.order=order;
         this.name=name;
         this.size=size;
+        this.price=price;
         this.toppings=toppings;
     }
 
@@ -53,9 +56,18 @@ public class Pizza {
         return size;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
     public List<PizzaToppings> getToppings() {
         return toppings;
     }
 
+    public String printToppings(){
+        return String.join(",", toppings.stream()
+                .map(String::valueOf)
+                .collect(Collectors.toList()));
+    }
 
 }
